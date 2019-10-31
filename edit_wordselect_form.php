@@ -136,6 +136,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
      */
     protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
+        $question = $this->data_preprocessing_combined_feedback($question, false);
         $question = $this->data_preprocessing_hints($question, true, true);
         if (empty($question->options)) {
             return $question;
